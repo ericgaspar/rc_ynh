@@ -5,7 +5,7 @@
 #=================================================
 
 # dependencies used by the app
-pkg_dependencies="dirmngr gnupg  build-essential mongodb-org graphicsmagick"
+#pkg_dependencies="dirmngr gnupg  build-essential mongodb-org graphicsmagick"
 
 nodejs_version=12
 
