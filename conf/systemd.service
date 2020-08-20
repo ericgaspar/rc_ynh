@@ -5,9 +5,9 @@ After=network.target remote-fs.target nss-lookup.target nginx.target mongod.targ
 [Service]
 User=__APP__
 WorkingDirectory=__FINALPATH__
-Environment="PATH=__ENV_PATH__"
-Environment="NODE_ENV=production"
-ExecStart=__YNH_NODE__ main.js
+Environment=PATH=__ENV_PATH__
+Environment=NODE_ENV=production
+ExecStart=__YNH_NPM__ main.js
 
 StandardOutput=syslog
 StandardError=syslog
