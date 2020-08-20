@@ -80,9 +80,6 @@ ynh_install_mongo
 #=================================================
 ynh_print_info --message="Creating a MongoDB database..."
 
-# Start mongodb
-systemctl enable mongod && systemctl start mongod
-
 # Registering db name
 db_name=$(ynh_sanitize_dbid --db_name=$app)
 ynh_app_setting_set --app=$app --key=db_name --value=$db_name
