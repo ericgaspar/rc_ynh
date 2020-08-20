@@ -48,9 +48,7 @@ ynh_remove_systemd_config
 #=================================================
 ynh_script_progression --message="Removing the Mongodb database..." --time --weight=1
 
-
-# remove database!!!
-mongo $app --eval "db.dropDatabase()"
+ynh_mongo_remove_db --db_user=db_user --db_name=db_name
 
 #=================================================
 # REMOVE DEPENDENCIES
