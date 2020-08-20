@@ -73,10 +73,7 @@ ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 # Install Yarn
 #ynh_install_extra_app_dependencies --repo="deb https://dl.yarnpkg.com/debian/ stable main" --package="yarn" --key="https://dl.yarnpkg.com/debian/pubkey.gpg"
 
-
-	ynh_install_extra_app_dependencies --repo="deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.2 main" --package="mongodb-org mongodb-org-server mongodb-org-tools" --key="https://www.mongodb.org/static/pgp/server-4.2.asc"
-	
-	mongodb_servicename=$mongodb_buster
+ynh_install_mongo
 
 #=================================================
 # CREATE A MONGODB DATABASE
@@ -84,8 +81,7 @@ ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 ynh_print_info --message="Creating a MongoDB database..."
 
 # Start mongodb
-systemctl enable mongod
-systemctl start mongod
+systemctl enable mongod && systemctl start mongod
 
 # Registering db name
 db_name=$(ynh_sanitize_dbid --db_name=$app)
@@ -105,7 +101,7 @@ ynh_setup_source --dest_dir=$final_path
 #=================================================
 ynh_script_progression --message="Configuring NGINX web server..." --weight=2
 
-# Create a dedicated nginx config
+# Create a dedicated NGINX config
 ynh_add_nginx_config
 
 #=================================================
