@@ -159,7 +159,7 @@ yunohost service add $app --description "Rocket.Chat" --log="/var/log/$app/$app.
 
 yunohost service add mongod --description "MongoDB daemon" --log "/var/log/mongodb/mongodb.log"
 
-mongod --eval "printjson(rs.initiate())"
+#mongod --eval "printjson(rs.initiate())"
 
 #=================================================
 # START SYSTEMD SERVICE
