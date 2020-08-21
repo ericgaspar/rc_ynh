@@ -39,8 +39,8 @@
                     "en": "Choose a path for Rocketchat",
                     "fr": "Choisissez un chemin pour Rocketchat"
                 },
-                "example": "/example",
-                "default": "/example"
+                "example": "/rocketchat",
+                "default": "/rocketchat"
             },
             {
                 "name": "admin",
