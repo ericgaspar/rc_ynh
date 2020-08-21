@@ -70,21 +70,6 @@ ynh_install_app_dependencies $pkg_dependencies
 # Install Nodejs
 ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 
-ynh_install_mongo
-
-#=================================================
-# CREATE A MONGODB DATABASE
-#=================================================
-ynh_print_info --message="Creating a MongoDB database..."
-
-# Registering db name
-db_name=$(ynh_sanitize_dbid --db_name=$app)
-db_user=$db_name
-db_pwd=$(ynh_string_random --length=30)
-
-ynh_app_setting_set --app=$app --key=db_name --value=$db_name
-ynh_mongo_setup_db --db_user=db_user --db_name=db_name --db_pwd=$db_pwd
-
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
@@ -134,6 +119,21 @@ ynh_replace_string --match_string="__DOMAIN__"  --replace_string="$domain" --tar
 
 ynh_add_systemd_config
 
+#=================================================
+# CREATE A MONGODB DATABASE
+#=================================================
+ynh_print_info --message="Creating a MongoDB database..."
+
+ynh_install_mongo
+
+# Registering db name
+db_name=$(ynh_sanitize_dbid --db_name=$app)
+db_user=$db_name
+db_pwd=$(ynh_string_random --length=30)
+
+ynh_app_setting_set --app=$app --key=db_name --value=$db_name
+ynh_mongo_setup_db --db_user=db_user --db_name=db_name --db_pwd=$db_pwd
+
 # #=================================================
 # # MODIFY A CONFIG FILE
 # #=================================================
@@ -157,8 +157,6 @@ chown -R $app:$app $final_path
 ynh_script_progression --message="Integrating service in YunoHost..."
 
 yunohost service add $app --description "Rocket.Chat" --log="/var/log/$app/$app.log"
-
-yunohost service add mongod --description "MongoDB daemon" --log "/var/log/mongodb/mongodb.log"
 
 mongo --eval "printjson(rs.initiate())"
 
