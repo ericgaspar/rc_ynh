@@ -120,11 +120,8 @@ ynh_system_user_create --username=$app --home_dir=$final_path
 # INSTALL ROCKETCHAT
 #==============================================
 # ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=60
-
-curl -L https://releases.rocket.chat/latest/download -o /tmp/rocket.chat.tgz
-tar -xzf /tmp/rocket.chat.tgz -C /tmp
-cd /tmp/bundle/programs/server && npm install
-mv /tmp/bundle $final_path
+ynh_use_nodejs
+install_rocketchat
 
 # pushd "$final_path/server" || ynh_die
 # 	ynh_use_nodejs
@@ -136,7 +133,7 @@ mv /tmp/bundle $final_path
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
-ynh_replace_string --match_string="__ENV_PATH__" --replace_string="$PATH"    --target_file="../conf/systemd.service"
+ynh_replace_string --match_string="__ENV_PATH__" --replace_string="$PATH" --target_file="../conf/systemd.service"
 ynh_replace_string --match_string="__YNH_NPM__"  --replace_string="$ynh_npm" --target_file="../conf/systemd.service"
 ynh_replace_string --match_string="__PORT__"  --replace_string="$port" --target_file="../conf/systemd.service"
 ynh_replace_string --match_string="__DOMAIN__"  --replace_string="$domain" --target_file="../conf/systemd.service"
