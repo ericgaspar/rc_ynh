@@ -35,8 +35,8 @@
                 "name": "path",
                 "type": "path",
                 "ask": {
-                    "en": "Choose a path for Rocketchat",
-                    "fr": "Choisissez un chemin pour Rocketchat"
+                    "en": "Choose a path for RocketChat",
+                    "fr": "Choisissez un chemin pour RocketChat"
                 },
                 "example": "/rocketchat",
                 "default": "/rocketchat"
