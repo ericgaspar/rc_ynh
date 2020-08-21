@@ -139,8 +139,8 @@ ynh_add_systemd_config
 # # MODIFY A CONFIG FILE
 # #=================================================
 
-#ynh_replace_string --match_string="  engine:/"  --replace_string="engine: wiredTiger/"  --target_file="/etc/mongod.conf"
-#ynh_replace_string --match_string="replication:/replication:\n"  --replace_string="replSetName: rs01/" --target_file="/etc/mongod.conf"
+#ynh_replace_string --match_string="  engine:/" --replace_string="engine: wiredTiger/" --target_file="/etc/mongod.conf"
+#ynh_replace_string --match_string="replication:/replication:\n" --replace_string="replSetName: rs01/" --target_file="/etc/mongod.conf"
 
 #=================================================
 # GENERIC FINALIZATION
@@ -159,7 +159,7 @@ ynh_script_progression --message="Integrating service in YunoHost..."
 
 yunohost service add $app --description "Rocket.Chat" --log="/var/log/$app/$app.log"
 
-yunohost service add mongod --description "MongoDB daemon" --log "/var/log/mongodb/mongodb.log"
+yunohost service add mongodb --description "MongoDB daemon" --log "/var/log/mongodb/mongodb.log"
 
 #mongod --eval "printjson(rs.initiate())"
 
