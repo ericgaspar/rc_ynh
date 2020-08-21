@@ -7,12 +7,11 @@
         "fr": "Plateforme de collaboration de chat"
     },
     "version": "3.5.3~ynh1",
-    "url": "https://example.com",
-    "license": "free",
+    "url": "https://github.com/RocketChat/Rocket.Chat",
+    "license": "MIT",
     "maintainer": {
-        "name": "John doe",
-        "email": "john.doe@example.com",
-        "url": "http://example.com"
+        "name": "",
+        "email": ""
     },
     "requirements": {
         "yunohost": ">= 3.8.1"
