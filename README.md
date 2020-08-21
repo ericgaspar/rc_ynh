@@ -9,17 +9,17 @@
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
 ## Overview
-Quick description of this app.
+RocketChat is a free and open source team chat collaboration platform that allows users to communicate securely in real-time across devices on web, desktop or mobile and to customize their interface with a range of plugins, themes and integrations with other key software. 
 
 **Shipped version:** 1.0
 
 ## Screenshots
 
-![](Link to a screenshot of this app.)
+![](https://rocket.chat/wp-content/uploads/2020/07/devices-screens-768x433.png.webp)
 
 ## Demo
 
-* [Official demo](Link to a demo site for this app.)
+* [Official demo](https://cloud.rocket.chat/trial/)
 
 ## Configuration
 
@@ -27,7 +27,7 @@ How to configure this app: From an admin panel, a plain file with SSH, or any ot
 
 ## Documentation
 
- * Official documentation: Link to the official documentation of this app
+ * Official documentation:https://docs.rocket.chat/
  * YunoHost documentation: If specific documentation is needed, feel free to contribute.
 
 ## YunoHost specific features

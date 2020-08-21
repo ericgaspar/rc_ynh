@@ -27,10 +27,10 @@
                 "name": "domain",
                 "type": "domain",
                 "ask": {
-                    "en": "Choose a domain name for Rocketchat",
-                    "fr": "Choisissez un nom de domaine pour Rocketchat"
+                    "en": "Choose a domain name for RocketChat",
+                    "fr": "Choisissez un nom de domaine pour RocketChat"
                 },
-                "example": "example.com"
+                "example": "domain.org"
             },
             {
                 "name": "path",
