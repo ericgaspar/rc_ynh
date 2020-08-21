@@ -39,8 +39,8 @@
                     "en": "Choose a path for Rocketchat",
                     "fr": "Choisissez un chemin pour Rocketchat"
                 },
-                "example": "/rocketchat",
-                "default": "/rocketchat"
+                "example": "/",
+                "default": "/"
             },
             {
                 "name": "is_public",
