@@ -27,15 +27,15 @@ How to configure this app: From an admin panel, a plain file with SSH, or any ot
 
 ## Documentation
 
- * Official documentation:https://docs.rocket.chat/
+ * Official documentation: https://docs.rocket.chat/
  * YunoHost documentation: If specific documentation is needed, feel free to contribute.
 
 ## YunoHost specific features
 
 #### Multi-user support
 
-Are LDAP and HTTP auth supported?
-Can the app be used by multiple users?
+* Are LDAP and HTTP auth supported?
+* Can the app be used by multiple users?
 
 #### Supported architectures
 
@@ -55,7 +55,7 @@ Can the app be used by multiple users?
 ## Links
 
  * Report a bug: https://github.com/YunoHost-Apps/rocketchat_ynh/issues
- * Rocketchat website: https://rocket.chat/
+ * RocketChat website: https://rocket.chat/
  * Upstream app repository: https://github.com/RocketChat/Rocket.Chat
  * YunoHost website: https://yunohost.org/
 
