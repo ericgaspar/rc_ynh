@@ -343,11 +343,11 @@ ynh_install_mongo() {
     mongodb_servicename=$MONGODB_SERVICENAME
     
     # Make sure MongoDB is started and enabled
-    #systemctl is-enabled $MONGODB_SERVICENAME -q || systemctl enable $MONGODB_SERVICENAME --quiet
-    #systemctl is-active $MONGODB_SERVICENAME -q || ynh_systemd_action --service_name=$MONGODB_SERVICENAME --action=restart --line_match="aiting for connections" --log_path="/var/log/mongodb/$MONGODB_SERVICENAME.log"
+    systemctl is-enabled $MONGODB_SERVICENAME -q || systemctl enable $MONGODB_SERVICENAME --quiet
+    systemctl is-active $MONGODB_SERVICENAME -q || ynh_systemd_action --service_name=$MONGODB_SERVICENAME --action=restart --line_match="aiting for connections" --log_path="/var/log/mongodb/$MONGODB_SERVICENAME.log"
     
     # Integrate MongoDB service in YunoHost
-    #yunohost service add $MONGODB_SERVICENAME --description "MongoDB daemon" --log "/var/log/mongodb/$MONGODB_SERVICENAME.log"
+    yunohost service add $MONGODB_SERVICENAME --description "MongoDB daemon" --log "/var/log/mongodb/$MONGODB_SERVICENAME.log"
 }
 
 # Remove MongoDB
