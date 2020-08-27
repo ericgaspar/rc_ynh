@@ -16,7 +16,7 @@
     "requirements": {
         "yunohost": ">= 3.8.1"
     },
-    "multi_instance": true,
+    "multi_instance": false,
     "services": [
         "nginx"
     ],
@@ -38,8 +38,8 @@
                     "en": "Choose a path for RocketChat",
                     "fr": "Choisissez un chemin pour RocketChat"
                 },
-                "example": "/rocketchat",
-                "default": "/rocketchat"
+                "example": "/",
+                "default": "/"
             },
             {
                 "name": "is_public",
