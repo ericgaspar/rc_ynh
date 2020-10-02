@@ -1,7 +1,7 @@
-SOURCE_URL=https://github.com/RocketChat/Rocket.Chat/archive/3.5.3.tar.gz
-SOURCE_SUM=201170e61a9177b0e4db08faa0b3666b97ef5bc64e720a4a4ffbfe91903a130c
+SOURCE_URL=https://github.com/RocketChat/Rocket.Chat/archive/3.7.0.tar.gz
+SOURCE_SUM=1c964bbdea0bea72b5f65b6bea1941d409688cbcba9a8b30afbacd2c0c5cee3f
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 #SOURCE_IN_SUBDIR=true
-#SOURCE_FILENAME=Rocket.Chat-3.5.3.tar.gz
+#SOURCE_FILENAME=
 #SOURCE_EXTRACT=true

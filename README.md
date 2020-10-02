@@ -11,7 +11,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 RocketChat is a free and open source team chat collaboration platform that allows users to communicate securely in real-time across devices on web, desktop or mobile and to customize their interface with a range of plugins, themes and integrations with other key software. 
 
-**Shipped version:** 3.5.3
+**Shipped version:** 3.7.0
 
 ## Screenshots
 
@@ -36,8 +36,6 @@ How to configure this app: From an admin panel, a plain file with SSH, or any ot
 
 * Are LDAP and HTTP auth supported?
 * Can the app be used by multiple users?
-
-#### Supported architectures
 
 #### Supported architectures
 
