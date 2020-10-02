@@ -125,7 +125,8 @@ ynh_script_progression --message="Building $app... (this will take some time and
 curl -L https://releases.rocket.chat/latest/download -o /tmp/rocket.chat.tgz
 tar -xzf /tmp/rocket.chat.tgz -C /tmp
 cd /tmp/bundle/programs/server && npm install
-mv /tmp/bundle $final_path
+mkdir /opt/yunohost/$app
+mv /tmp/bundle /opt/yunohost/$app
 
 #=================================================
 # SETUP SYSTEMD
