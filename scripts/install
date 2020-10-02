@@ -119,7 +119,8 @@ ynh_script_progression --message="Building $app... (this will take some time and
 
 pushd "$final_path/server" || ynh_die
  	ynh_use_nodejs
- 	ynh_exec_warn_less ynh_npm install --unsafe-perm
+ 	#ynh_exec_warn_less ynh_npm install --unsafe-perm
+ 	ynh_exec_as $app PATH="$nodejs_path:$PATH" "$nodejs_path/npm" install --unsafe-perm
 popd || ynh_die
 
 #=================================================
