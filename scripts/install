@@ -127,7 +127,7 @@ ynh_script_progression --message="Building $app... (this will take some time and
 #  	ynh_exec_warn_less ynh_npm install --unsafe-perm
 # popd || ynh_die
 
-cd $final_path/bundle/programs/server
+cd /var/www/rocketchat/bundle/programs/server
 	ynh_use_nodejs
 	npm install
 
