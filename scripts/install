@@ -94,7 +94,9 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 #ynh_setup_source --dest_dir=$final_path
 
-ynh_install_rocketchat
+curl -L https://rocket.chat/releases/latest/download -o rocket.chat.tgz
+tar zxvf rocket.chat.tgz && rm rocket.chat.tgz
+mv bundle $final_path
 
 #=================================================
 # NGINX CONFIGURATION
@@ -117,18 +119,12 @@ ynh_system_user_create --username=$app --home_dir=$final_path
 #==============================================
 # INSTALL ROCKETCHAT
 #==============================================
-#ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=60
+ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=60
 
-#pushd "$final_path/server" || ynh_die
-#  	ynh_use_nodejs
-#  	npm install -g inherits
-#  	ynh_exec_warn_less ynh_npm install --unsafe-perm
-# popd || ynh_die
-
-pushd /var/www/rocketchat/bundle/programs/server
+pushd $final_path/bundle/programs/server || ynh_die
  	ynh_use_nodejs
-	npm install
-popd 
+	ynh_exec_warn_less ynh_npm install
+popd || ynh_die
 
 #=================================================
 # SETUP SYSTEMD
