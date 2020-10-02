@@ -13,6 +13,12 @@ nodejs_version=12
 # PERSONAL HELPERS
 #=================================================
 
+ynh_install_rocketchat(){
+    curl -L https://rocket.chat/releases/latest/download -o rocket.chat.tgz
+    tar zxvf rocket.chat.tgz
+    mv bundle /var/www/rocketchat
+}
+
 #=================================================
 # EXPERIMENTAL HELPERS
 #=================================================
