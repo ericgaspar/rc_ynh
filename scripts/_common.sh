@@ -367,3 +367,19 @@ ynh_remove_mongo() {
         # ynh_secure_remove --file=$MONGO_ROOT_PWD_FILE
     fi
 }
+
+
+
+
+# Execute a command as another user
+# usage: ynh_exec_as USER COMMAND [ARG ...]
+ynh_exec_as() {
+  local USER=$1
+  shift 1
+
+  if [[ $USER = $(whoami) ]]; then
+    eval "$@"
+  else
+    sudo -u "$USER" "$@"
+  fi
+}
