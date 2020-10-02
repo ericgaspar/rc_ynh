@@ -86,22 +86,6 @@ ynh_app_setting_set --app=$app --key=db_name --value=$db_name
 ynh_mongo_setup_db --db_user=db_user --db_name=db_name --db_pwd=$db_pwd
 
 #=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
-ynh_script_progression --message="Setting up source files..." --weight=2
-
-ynh_app_setting_set --app=$app --key=final_path --value=$final_path
-# Download, check integrity, uncompress and patch the source from app.src
-#ynh_setup_source --dest_dir=$final_path
-
-curl -SLf "https://releases.rocket.chat/latest/download/" -o /tmp/rocket.chat.tgz
-tar -xzf /tmp/rocket.chat.tgz -C /tmp
-cd /tmp/bundle/programs/server
-ynh_use_nodejs
-npm install
-mv /tmp/bundle "$final_path"
-
-#=================================================
 # NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Configuring NGINX web server..." --weight=2
@@ -122,7 +106,7 @@ ynh_system_user_create --username=$app --home_dir=$final_path
 #==============================================
 # INSTALL ROCKETCHAT
 #==============================================
-ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=60
+#ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=60
 
 # pushd "$final_path/server" || ynh_die
 #  	ynh_use_nodejs
@@ -133,6 +117,23 @@ ynh_script_progression --message="Building $app... (this will take some time and
 # cd /var/www/rocketchat/bundle/programs/server
 # 	ynh_use_nodejs
 # 	npm install
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression --message="Setting up source files..." --weight=2
+
+ynh_app_setting_set --app=$app --key=final_path --value=$final_path
+# Download, check integrity, uncompress and patch the source from app.src
+#ynh_setup_source --dest_dir=$final_path
+
+curl -SLf "https://releases.rocket.chat/latest/download/" -o /tmp/rocket.chat.tgz
+tar -xzf /tmp/rocket.chat.tgz -C /tmp
+cd /tmp/bundle/programs/server
+ynh_use_nodejs
+npm install
+mv /tmp/bundle "$final_path"
+
 
 #=================================================
 # SETUP SYSTEMD
