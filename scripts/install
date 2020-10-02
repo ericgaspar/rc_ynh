@@ -94,9 +94,12 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 #ynh_setup_source --dest_dir=$final_path
 
-curl -SLf "https://releases.rocket.chat/latest/download/" -o rocket.chat.tgz
-tar zxf rocket.chat.tgz  &&  rm rocket.chat.tgz
-cp -r bundle/ /var/www/rocketchat/
+curl -SLf "https://releases.rocket.chat/latest/download/" -o /tmp/rocket.chat.tgz
+tar -xzf /tmp/rocket.chat.tgz -C /tmp
+cd /tmp/bundle/programs/server
+ynh_use_nodejs
+npm install
+mv /tmp/bundle "$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
