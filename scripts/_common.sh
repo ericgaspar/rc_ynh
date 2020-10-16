@@ -23,8 +23,6 @@ nodejs_version=12
 # FUTURE OFFICIAL HELPERS
 #=================================================
 
-#!/bin/bash
-
 MONGO_SERVICENAME_STRETCH="mongodb"
 MONGO_SERVICENAME_BUSTER="mongod"
 MONGO_DEPENDENCIES_STRETCH="mongodb mongodb-server mongo-tools"
