@@ -58,12 +58,12 @@ ynh_backup --src_path="/etc/systemd/system/$app.service"
 #=================================================
 # BACKUP THE MYSQL DATABASE
 #=================================================
-ynh_print_info --message="Backing up the MySQL database..."
+ynh_print_info --message="Backing up the MongoDB database..."
 
 ### (However, things like mysql dumps *do* take some time to run, though the
 ### copy of the generated dump to the archive still happens later)
 
-ynh_mongo_dump_db --database=wekan > ./dump.bson
+ynh_mongo_dump_db --database=$db_name > ./dump.bson
 
 #=================================================
 # END OF SCRIPT
