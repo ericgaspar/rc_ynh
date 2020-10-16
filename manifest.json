@@ -6,7 +6,7 @@
         "en": "Team chat collaboration platform",
         "fr": "Plateforme de collaboration de chat"
     },
-    "version": "3.7.0~ynh1",
+    "version": "3.7.1~ynh1",
     "url": "https://github.com/RocketChat/Rocket.Chat",
     "license": "MIT",
     "maintainer": {
