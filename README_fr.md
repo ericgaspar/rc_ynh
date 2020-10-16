@@ -11,7 +11,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 ## Vue d'ensemble
 RocketChat est une plate-forme de collaboration de chat d'équipe gratuite et open source qui permet aux utilisateurs de communiquer en toute sécurité en temps réel sur les appareils sur le Web, le bureau ou le mobile et de personnaliser leur interface avec une gamme de plugins, de thèmes et d'intégrations avec d'autres logiciels clés.
 
-**Version incluse :** 3.7.0
+**Version incluse :** 3.7.1
 
 ## Captures d'écran
 
